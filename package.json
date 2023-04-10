@@ -11,6 +11,10 @@
     "build": "rollup --config",
     "prepublishOnly": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r3f-cutter/r3f-cutter"
+  },
   "author": "130166554+r3f-cutter@users.noreply.github.com",
   "license": "MIT",
   "devDependencies": {
