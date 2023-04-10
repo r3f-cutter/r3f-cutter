@@ -4,7 +4,7 @@ import { useFrame } from '@react-three/fiber';
 import { Plane } from '@react-three/drei';
 
 export default function Cutter({ children, plane }) {
-  const rootGroupRef = useRef();
+  const rootGroupRef = useRef<THREE.Object3D>();
 
   const [meshList, setMeshList] = useState([]);
   const [capMaterialList, setCapMaterialList] = useState([]);
