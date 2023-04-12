@@ -1,16 +1,16 @@
 import * as THREE from 'three';
-import { useRef, useState, useEffect } from 'react';
+import * as React from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Plane } from '@react-three/drei';
 
 export default function Cutter({ children, plane }) {
-  const rootGroupRef = useRef<THREE.Object3D>();
+  const rootGroupRef = React.useRef<THREE.Object3D>();
 
-  const [meshList, setMeshList] = useState([]);
-  const [capMaterialList, setCapMaterialList] = useState([]);
-  const [planeSize, setPlaneSize] = useState(10);
+  const [meshList, setMeshList] = React.useState([]);
+  const [capMaterialList, setCapMaterialList] = React.useState([]);
+  const [planeSize, setPlaneSize] = React.useState(10);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const meshChildren = [];
     const capMatList = [];
     const rootGroup = rootGroupRef.current;
@@ -83,7 +83,7 @@ export default function Cutter({ children, plane }) {
     };
   }, [rootGroupRef.current, children]);
 
-  const planeListRef = useRef(null);
+  const planeListRef = React.useRef(null);
 
   // See
   // https://react.dev/learn/manipulating-the-dom-with-refs#how-to-manage-a-list-of-refs-using-a-ref-callback
