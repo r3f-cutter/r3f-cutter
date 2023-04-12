@@ -28,5 +28,5 @@ npm i @r3f-cutter/r3f-cutter
 # Limitation/Bugs
 - Only one plane supported at present. Support for multiple planes will be added. 
 - Caps use the same material as the original [Mesh](https://threejs.org/docs/index.html?q=Mesh#api/en/objects/Mesh). If the [Mesh](https://threejs.org/docs/index.html?q=Mesh#api/en/objects/Mesh) uses [an array of materials](https://threejs.org/docs/index.html?q=Mesh#api/en/objects/Mesh.material) then it is capped using the first material from the list. 
-- If the [Mesh](https://threejs.org/docs/index.html?q=Mesh#api/en/objects/Mesh) is modified after it is initially clipped (for example, via [useFrame()](https://docs.pmnd.rs/react-three-fiber/api/hooks#useframe)) then the caps are not correctly recomputed. This needs to be fixed.
+- If the [Mesh](https://threejs.org/docs/index.html?q=Mesh#api/en/objects/Mesh) is modified after it is initially clipped (for example, via [useFrame()](https://docs.pmnd.rs/react-three-fiber/api/hooks#useframe)) then the caps are not correctly recomputed. This needs to be fixed. An live example that illustrates this issue is available [here](https://codesandbox.io/s/rotating-box-example-sculn6).
 - It might be useful to have an option to disable capping entirely and just use clipping.
