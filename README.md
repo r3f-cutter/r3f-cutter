@@ -15,7 +15,6 @@ import Cutter from '@r3f-cutter/r3f-cutter';
 </Cutter>
 ```
 
-![gifted-sound-q3uip1.png](gifted-sound-q3uip1.png)
 
 # Installation
 
@@ -24,7 +23,8 @@ npm i @r3f-cutter/r3f-cutter
 ```
 
 # Live Examples
-- https://codesandbox.io/s/gifted-sound-q3uip1
+
+<a href="https://codesandbox.io/s/gifted-sound-q3uip1"><img src="gifted-sound-q3uip1.png" width="128"/></a>
 
 # Limitation/Bugs
 - Only one plane supported at present. Support for multiple planes will be added. 
