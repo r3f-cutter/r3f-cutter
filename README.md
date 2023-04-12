@@ -15,6 +15,8 @@ import Cutter from '@r3f-cutter/r3f-cutter';
 </Cutter>
 ```
 
+![gifted-sound-q3uip1.png](gifted-sound-q3uip1.png)
+
 # Installation
 
 ```sh
