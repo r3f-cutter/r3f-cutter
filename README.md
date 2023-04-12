@@ -1,5 +1,5 @@
 # Overview
-This package provides a `<Cutter>` component based on [react-three-fiber](https://github.com/pmndrs/react-three-fiber) that can clip and cap `mesh`es in an arbitrary hierarchy tree of `Object3D`/`group`/`mesh` instances in a manner similar to [this](https://codesandbox.io/s/r3f-torus-capped-9f5kyb) example. 
+This package provides a `<Cutter>` component based on [react-three-fiber](https://github.com/pmndrs/react-three-fiber) that can clip and cap `mesh`es in an arbitrary scene in a manner similar to [this](https://codesandbox.io/s/r3f-torus-capped-9f5kyb) example. 
 
 A simple example of usage is something like:
 
