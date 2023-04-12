@@ -1,4 +1,4 @@
-<a href="https://codesandbox.io/s/gifted-sound-q3uip1"><img src="doc/images/gifted-sound-q3uip1.png" width="128"/></a>
+<a href="https://codesandbox.io/s/r3f-cutter-box-example-q3uip1"><img src="doc/images/gifted-sound-q3uip1.png" width="128"/></a>
 <a href="https://codesandbox.io/s/torus-and-box-single-cutplane-y6hl0d"><img src="doc/images/torus-and-box-single-cutplane-y6hl0d.png" width="128"></a>
 
 # Overview
