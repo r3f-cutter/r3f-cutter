@@ -25,7 +25,7 @@ npm i @r3f-cutter/r3f-cutter
 # Live Examples
 
 <a href="https://codesandbox.io/s/gifted-sound-q3uip1"><img src="doc/images/gifted-sound-q3uip1.png" width="128"/></a>
-<a href="https://codesandbox.io/s/torus-and-box-single-cutplane-y6hl0d"><img src="doc/images/torus-and-box-single-cutplane-y6hl0d.png"></a>
+<a href="https://codesandbox.io/s/torus-and-box-single-cutplane-y6hl0d"><img src="doc/images/torus-and-box-single-cutplane-y6hl0d.png" width="128"></a>
 
 # Limitation/Bugs
 - Only one plane supported at present. Support for multiple planes will be added. 
