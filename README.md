@@ -1,5 +1,5 @@
 # Overview
-This package provides a `<Cutter>` component based on [react-three-fiber](https://github.com/pmndrs/react-three-fiber) that can clip and cap `mesh`es in an arbitrary scene in a manner similar to [this](https://codesandbox.io/s/r3f-torus-capped-9f5kyb) example. 
+This package provides a `<Cutter>` component based on [react-three-fiber](https://github.com/pmndrs/react-three-fiber) that can clip and cap `mesh`es in an arbitrary scene in a manner similar to [this](https://codesandbox.io/s/r3f-torus-capped-9f5kyb) example. A `<Cutter>` will clip and cap all descendant meshes using a [Plane](https://threejs.org/docs/index.html?q=Plane#api/en/math/Plane) specified via its `plane` prop. This gives the meshes the appearance of filled solides instead of hollow objects with just surfaces. The caps at the clipping plane position use the same material as the original mesh. 
 
 A simple example of usage is something like:
 
