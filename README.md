@@ -30,3 +30,4 @@ npm i @r3f-cutter/r3f-cutter
 - Only one plane supported at present. Support for multiple planes will be added. 
 - Caps use the same material as the original `mesh`. If a `mesh` uses an array of materials then it is capped using the first material from the list. 
 - If the `mesh` is modified after it is initially clipped then the caps are not correctly recomputed. This needs to be fixed.
+- It might be useful to have an option to disable capping entirely and just use clipping.
