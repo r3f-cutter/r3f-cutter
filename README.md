@@ -19,7 +19,7 @@ import Cutter from '@r3f-cutter/r3f-cutter';
 </Cutter>
 ```
 
-Implementation of this package was inspired by (pmndrs/react-three-csg)[https://github.com/pmndrs/react-three-csg].
+Implementation of this package was inspired by [pmndrs/react-three-csg](https://github.com/pmndrs/react-three-csg).
 
 # Installation
 
