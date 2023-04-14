@@ -119,7 +119,7 @@ const Cutter = React.forwardRef<CutterRef, CutterProps>(
     });
   });
 
-  React.useEffect(() => void update())
+  React.useEffect(() => void update(), [rootGroupRef.current, children])
   React.useImperativeHandle(fRef, () => ({ update }), [])
 
   return (

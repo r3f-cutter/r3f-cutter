@@ -1,6 +1,6 @@
 {
   "name": "@r3f-cutter/r3f-cutter",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "type": "module",
   "main": "dist/index.cjs",
