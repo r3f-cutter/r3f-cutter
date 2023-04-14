@@ -12,7 +12,7 @@ export type CutterRef = {
   update: () => void
 }
 
-export const Cutter = React.forwardRef<CutterRef, CutterProps>(
+const Cutter = React.forwardRef<CutterRef, CutterProps>(
   ({ children, plane }: CutterProps, fRef: CutterRef) => {
   const rootGroupRef = React.useRef<THREE.Object3D>();
 
