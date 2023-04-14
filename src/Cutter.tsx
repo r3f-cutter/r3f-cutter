@@ -221,3 +221,5 @@ function PlaneStencilGroup({ meshObj, plane, renderOrder }) {
     )
   );
 }
+
+export default Cutter;
