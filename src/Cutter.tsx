@@ -1,22 +1,33 @@
-import * as THREE from 'three';
 import * as React from 'react';
+import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
 import { Plane } from '@react-three/drei';
 
-export default function Cutter({ children, plane }) {
+export type CutterProps = {
+  children: React.ReactNode,
+  plane: THREE.plane
+}
+
+export type CutterRef = {
+  update: () => void
+}
+
+export const Cutter = React.forwardRef<CutterRef, CutterProps>(
+  ({ children, plane }: CutterProps, fRef: CutterRef) => {
   const rootGroupRef = React.useRef<THREE.Object3D>();
 
   const [meshList, setMeshList] = React.useState([]);
   const [capMaterialList, setCapMaterialList] = React.useState([]);
   const [planeSize, setPlaneSize] = React.useState(10);
 
-  React.useEffect(() => {
-    const meshChildren = [];
-    const capMatList = [];
+  const update: () => void = React.useCallback(() => {
+    const meshChildren: THREE.mesh[] = [];
+    const capMatList: THREE.material[] = [];
     const rootGroup = rootGroupRef.current;
     if (rootGroup) {
-      rootGroup.traverse((child) => {
+      rootGroup.traverse((child: THREE.Object3D) => {
         if (child.isMesh && child.material && !child.isBrush) {
+          child.matrixAutoUpdate = false;
           child.geometry.computeBoundingBox();
           //
           // Add clipping planes to each mesh and make sure that the material is
@@ -24,7 +35,7 @@ export default function Cutter({ children, plane }) {
           // mesh.
           //
           if (Array.isArray(child.material)) {
-            child.material.forEach((mat) => {
+            child.material.forEach((mat: THREE.material) => {
               mat.clippingPlanes = [plane];
               mat.side = THREE.DoubleSide;
             });
@@ -70,7 +81,7 @@ export default function Cutter({ children, plane }) {
     //
     // Dispose old cap materials.
     //
-    capMaterialList.forEach((item) => item.dispose());
+    capMaterialList.forEach((item: THREE.material) => item.dispose());
     //
     // Save the new cap material list.
     //
@@ -78,9 +89,9 @@ export default function Cutter({ children, plane }) {
     //
     // Cleanup function for when this component is unmounted
     //
-    return () => {
-      capMaterialList.forEach((item) => item.dispose());
-    };
+    // return () => {
+    //   capMaterialList.forEach((item: THREE.material) => item.dispose());
+    // };
   }, [rootGroupRef.current, children]);
 
   const planeListRef = React.useRef(null);
@@ -96,7 +107,7 @@ export default function Cutter({ children, plane }) {
   }
 
   useFrame(() => {
-    getPlaneListMap().forEach((planeObj) => {
+    getPlaneListMap().forEach((planeObj: Plane) => {
       if (planeObj) {
         plane.coplanarPoint(planeObj.position);
         planeObj.lookAt(
@@ -107,6 +118,9 @@ export default function Cutter({ children, plane }) {
       }
     });
   });
+
+  React.useEffect(() => void update())
+  React.useImperativeHandle(fRef, () => ({ update }), [])
 
   return (
     <group>
@@ -142,9 +156,12 @@ export default function Cutter({ children, plane }) {
       ))}
     </group>
   );
-}
+});
 
 function PlaneStencilGroup({ meshObj, plane, renderOrder }) {
+  //
+  meshObj.updateMatrix();
+  meshObj.updateMatrixWorld();
   //
   // :IMPORTANT: We must apply all the world transformations of the meshObj to
   // the stencil too. Otherwise, the stencil may have different
